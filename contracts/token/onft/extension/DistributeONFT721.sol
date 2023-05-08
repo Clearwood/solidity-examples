@@ -173,7 +173,8 @@ contract DistributeONFT721 is ONFT721 {
         uint16 _srcChainId,
         bytes memory _srcAddress,
         uint64, /*_nonce*/
-        bytes memory _payload
+        bytes memory _payload,
+        bool
     ) internal virtual override {
         uint8 functionType;
         assembly {

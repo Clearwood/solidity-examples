@@ -79,7 +79,7 @@ abstract contract OFTCoreV2 is NonblockingLzApp {
         return lzEndpoint.estimateFees(_dstChainId, address(this), payload, _useZro, _adapterParams);
     }
 
-    function _nonblockingLzReceive(uint16 _srcChainId, bytes memory _srcAddress, uint64 _nonce, bytes memory _payload) internal virtual override {
+    function _nonblockingLzReceive(uint16 _srcChainId, bytes memory _srcAddress, uint64 _nonce, bytes memory _payload, bool) internal virtual override {
         uint8 packetType = _payload.toUint8(0);
 
         if (packetType == PT_SEND) {

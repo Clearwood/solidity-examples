@@ -1,3 +1,5 @@
+pragma solidity ^0.8.0;
+
 // Source: https://github.com/OpenZeppelin/openzeppelin-contracts/blob/master/contracts/access/Ownable.sol + Claimable.sol
 // Simplified by BoringCrypto
 
@@ -24,7 +26,7 @@ contract BoringOwnable is BoringOwnableData {
         address newOwner,
         bool direct,
         bool renounce
-    ) public onlyOwner {
+    ) public virtual onlyOwner {
         if (direct) {
             // Checks
             require(newOwner != address(0) || renounce, "Ownable: zero address");
